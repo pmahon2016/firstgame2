@@ -5,13 +5,16 @@ import game_settings as settings
 screen=pygame.display.set_mode((settings.screen_width,settings.screen_height))
 
 image = pygame.image.load("drone.png")
-
+boat = pygame.image.load("logs.png")
 rect = image.get_rect()
+rectb = boat.get_rect()
 screen_rect = screen.get_rect()
+
 
 # rect.centerx = screen_rect.centerx
 rect.right = screen_rect.right
-# rect.bottom = screen_rect.bottom
+rectb.centerx = screen_rect.centerx
+rectb.bottom = screen_rect.bottom
 rect.top = screen_rect.top
 
 
@@ -33,3 +36,4 @@ def blitme():
 
     # 6 - draw the screen elements
     screen.blit( image, rect)
+    screen.blit(boat, rectb)
