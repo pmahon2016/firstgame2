@@ -1,6 +1,7 @@
 import pygame
 import loadimages as li
 
+# boat and drone move variables. Set in this module to keep state  ( not to be refreshed)
 direction = ''
 boatdir = ''
 
@@ -16,11 +17,11 @@ def check_events():
 
             if event.key == pygame.K_RIGHT:
                 li.rectb.centerx +=10
-
+            # to move the boat manually left and right
             elif event.key == pygame.K_LEFT:
                 li.rectb.centerx -= 10
 
-
+            # make the drone drop
             elif event.key == pygame.K_DOWN:
                 direction = 'drop'
                 li.blitme(direction,boatdir)

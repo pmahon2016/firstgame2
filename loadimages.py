@@ -2,11 +2,11 @@ import pygame
 import game_settings as settings
 import game_controls as gc
 
-
+# initial loading of screen
 screen=pygame.display.set_mode((settings.screen_width,settings.screen_height))
 bg = pygame.image.load('sea.jpg')
 
-
+# set the rect variable for both the drone and the boat
 image = pygame.image.load("drone.png")
 boat = pygame.image.load("boat1.png")
 rect = image.get_rect()
@@ -22,7 +22,7 @@ rectb.bottom = screen_rect.bottom
 rect.top = screen_rect.top
 
 
-
+# function to move drone  and boat  - called from the game loop
 def blitme(direction, boatdir):
 
     screen.fill(settings.bg_color)
@@ -36,10 +36,12 @@ def blitme(direction, boatdir):
         if rect.centerx < 100:
             gc.direction = 'right'
 
+    # if the down arror is pressed in Games Settings, drop is set and this loop runs
     elif direction == 'drop':
         rect.centery += 5
         gc.direction = 'drop'
 
+    # boat movement
 
     if  boatdir == 'right':
         rectb.centerx += 1
@@ -52,7 +54,7 @@ def blitme(direction, boatdir):
             gc.boatdir = 'right'
 
 
-    # 6 - draw the screen elements
+    # 6 - draw three images on the screen. Background, boat and drone after each loop
     screen.blit(bg, (0, 0))
     screen.blit( image, rect)
     screen.blit(boat, rectb)
