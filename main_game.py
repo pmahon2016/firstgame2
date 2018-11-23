@@ -1,18 +1,30 @@
 import pygame
-import loadimages  # import the module to load screen settings and images
 import game_controls as gc
+from drone import Drone
+from boat import Boat
+import game_settings as settings
 
-gc.direction = 'left'  # set the initial variable to move the drone and boat left or right
-gc.boatdir = 'right'
+
+
 # Initialize the game
 pygame.init()
 
+screen = pygame.display.set_mode((settings.screen_width,settings.screen_height))
+bg = pygame.image.load('sea.jpg')
+
 # keep looping through
+
+drone = Drone(screen)
+boat = Boat(screen)
+
 
 while True:
 
-    #load the image(s)
-    loadimages.blitme(gc.direction, gc.boatdir)  # call the blitme function in loadimages.py to load images
+
+
+    screen.blit(bg, (0, 0))
+    drone.blitme()
+    boat.blitme()
     #clear the screen
     pygame.display.flip() #clear the screen before drawing it again
 

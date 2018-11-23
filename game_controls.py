@@ -1,9 +1,9 @@
 import pygame
-import loadimages as li
 
-# boat and drone move variables. Set in this module to keep state  ( not to be refreshed)
-direction = ''
-boatdir = ''
+
+# # boat and drone move variables. Set in this module to keep state  ( not to be refreshed)
+# direction = ''
+# boatdir = ''
 
 def check_events():
 
