@@ -56,5 +56,5 @@ def blitme(direction, boatdir):
 
     # 6 - draw three images on the screen. Background, boat and drone after each loop
     screen.blit(bg, (0, 0))
-    screen.blit( image, rect)
+    screen.blit(image, rect)
     screen.blit(boat, rectb)
