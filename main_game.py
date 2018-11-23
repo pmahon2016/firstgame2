@@ -4,7 +4,7 @@ from drone import Drone
 from boat import Boat
 import game_settings as settings
 
-
+gc.direction = 'left'
 
 # Initialize the game
 pygame.init()
@@ -23,13 +23,13 @@ while True:
 
 
     screen.blit(bg, (0, 0))
-    drone.blitme()
+    drone.blitme(gc.direction)
     boat.blitme()
     #clear the screen
     pygame.display.flip() #clear the screen before drawing it again
 
     # 8 - loop through the key events
-    gc.check_events()
+    gc.check_events(drone)
 
 
 
