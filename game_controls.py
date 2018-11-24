@@ -3,6 +3,7 @@ import pygame
 
 # # boat and drone move variables. Set in this module to keep state  ( not to be refreshed)
 direction = ''
+droneflag = ''
 # boatdir = ''
 
 def check_events(ship):

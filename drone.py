@@ -11,7 +11,7 @@ class Drone:
 
         self.rect.right = self.screen_rect.right
         self.rect.top = self.screen_rect.top
-
+        self.crash_sound = pygame.mixer.Sound('')
 
     def blitme(self,direction):
 
@@ -30,6 +30,8 @@ class Drone:
             self.rect.centery += 5
             gc.direction = 'drop'
             if self.rect.centery > 600:
-                self.remove(self)
+                gc.droneflag = False
 
         self.screen.blit(self.image, self.rect)
+
+
