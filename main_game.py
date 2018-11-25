@@ -6,6 +6,7 @@ import game_settings as settings
 
 gc.direction = 'left'
 gc.droneflag = True
+gc.boatdir = 'left'
 
 # Initialize the game
 pygame.init()
@@ -18,15 +19,14 @@ bg = pygame.image.load('sea.jpg')
 drone = Drone(screen)
 boat = Boat(screen)
 
+# game loop
 
 while True:
-
-
 
     screen.blit(bg, (0, 0))
     if gc.droneflag:
         drone.blitme(gc.direction)
-    boat.blitme()
+    boat.blitme(gc.boatdir)
     #clear the screen
     pygame.display.flip() #clear the screen before drawing it again
 

@@ -1,4 +1,4 @@
-'''game settings'''
+'''game settings. Some color and screen sizes'''
 
 
 
