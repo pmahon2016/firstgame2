@@ -28,7 +28,7 @@ while True:
         drone.blitme(gc.direction)
     boat.blitme(gc.boatdir)
     #clear the screen
-    pygame.display.flip() #clear the screen before drawing it again
+    pygame.display.flip()
 
     # 8 - loop through the key events
     gc.check_events(drone)
